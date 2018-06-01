@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belt</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'beltApp/css/index.css' %}">
+    <script src=""></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="header">
+            <h1>Welcome, {{ user.full_name }}!</h1>
+            <a href="/logout">Log Out</a>
+        </div>
+        <h3>Your Trip Schedules</h3>
+        <div class="schedule">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Plan</th>
+                        <th>Cancel trip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for trip in schedule %}
+                <tr>
+                    <td><a href="/destination/{{trip.id }}">{{ trip.destination }}</td>
+                    <td>{{ trip.trip_start }}</td>
+                    <td>{{ trip.trip_end }}</td>
+                    <td>{{ trip.description }}</td>
+                    {% if trip.creater.id == request.session.user_id %}
+                    <td><a href="/delete/{{trip.id}}">Cancel</a></td>
+                    {% else %}
+                    <td><a href="/remove/{{trip.id}}">Remove</a></td>
+                    {% endif %} 
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <h3>Other User's Travel Plans</h3>
+        <div class="others">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Do You Want to Join?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for trip in others_trips %}
+                    <tr>
+                        <td>{{ trip.creater.full_name }}</td>
+                        <td><a href="/destination/{{trip.id }}">{{ trip.destination }}</a></td>
+                        <td>{{ trip.trip_start }}</td>
+                        <td>{{ trip.trip_end }}</td>
+                        <td><a href="/join/{{ trip.id }}">Join this trip?</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a href="/add">Add Travel Plan</a>
+    </div>
+</body>
+</html>

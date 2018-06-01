@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belt</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'beltApp/css/index.css' %}">
+    <script src=""></script>
+</head>
+<body>
+    <div id="wrapper">
+
+            <div class="header">
+                    <h2>Add a Trip</h2> 
+                <a href="/main">Home</a><a href="/logout">Logout</a>
+            </div>
+            <div class="main2">
+                <form action='/createTrip' method='POST'>
+                    {% csrf_token %}
+                    <div>
+                        <h5>Destination</h5>
+                        <input type='text' name='destination' value="{{ destination }}">
+                    </div>  
+                    <div>
+                        <h5>Description</h5>
+                        <input type='text' name='description'>
+                    </div>
+                    <div>
+                        <h5>Travel Date From:</h5>
+                        <input type='date' name='trip_start'>
+                    </div>
+                    <div>
+                        <h5>Travel Date To:</h5>
+                        <input type='date' name='trip_end'>
+                    </div>
+                    <div>
+                        <button type='submit' class=''>Add Trip</button>
+                    </div>
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                        <li>
+                            <div class="alert alert-{{msg.level_tag}}" role="alert">
+                            {{msg.message}}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="airplane"></div>
+    </div>
+</body>
+</html>

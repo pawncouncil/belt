@@ -1,0 +1,183 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper{
+    height: 699px;
+    width: 970px;
+    background: linear-gradient(-90deg, #260205, #000000);    margin: auto;
+}
+
+image2{
+    display: inline-block;
+}
+
+.main{
+    height: 500px;
+    width: 970px;
+}
+
+.header{
+    margin-top: 20px;
+    height: 57px;
+   
+    color: darkred;
+    font-weight: bold;
+    background: linear-gradient(-90deg, #260205, black);
+}
+
+h1{
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.header a{
+    color: #8b0101;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 896px;
+    margin-top: -45px;
+}
+
+.header h2{
+    margin-left: 10px;
+}
+
+.schedule{
+    height: 180px;
+    overflow: scroll;
+ }
+
+ .others{
+    height: 180px;
+    overflow: scroll;
+}
+
+
+.registration{
+    height: 400px;
+    width: 196px;
+    background-color: black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.spacer{
+    height: 400px;
+    width: 190px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+h3{
+    color: #32383e;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+h6{
+    color: darkred;
+    margin-bottom: 0px;
+    margin-top: 11px;
+    margin-left: 13px;
+}
+.destination{
+    color: darkred;
+    margin-bottom: 0px;
+    margin-top: 11px;
+    margin-left: 13px;
+}
+
+input{
+    color: #6d6d6e;
+    background: linear-gradient(-90deg, darkred, black);
+    border-style: none;
+    margin-left: 10px;
+}
+
+form{
+    width: 200px;
+}
+
+.main2{
+    width: 300px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.airplane{
+    height: 493px;
+    width: 625px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(/static/beltApp/images/airplane.png);
+    background-repeat: no-repeat;
+}
+
+.reg{
+    color: darkred;
+    width: 100px;
+    background-color: black;
+    margin-top: 20px;
+    margin-left: 25px;
+    border-style: none;
+}
+
+.image{
+    height: 400px;
+    width: 766px;
+    margin-left: -5px;
+    display: inline-block;
+    vertical-align: top;
+    color: #8b0101;
+    list-style: none;
+}
+
+img{
+    height: 400px;
+    width: 775px;
+}
+
+.bottomheader{
+    height: 57px;
+    color: darkred;
+    font-weight: bold;
+    background: linear-gradient(-90deg, #260205, black);
+}
+
+.login{
+    height: 174px;
+    background: linear-gradient(-90deg, #260205, black);
+}
+
+.leave button{
+    font-size: 21px;
+    margin-left: 860px;
+    margin-top: 158px;
+    background-color: #250205;
+}
+
+button{
+    color: darkred;
+    background-color: #030000;
+    border-style: none;
+    margin-left: 49px;
+    margin-top: 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color:  #8b0101;   
+    margin-left: 10px;
+}
+
+.add{
+    margin-left: 10px;
+    height: 180px;
+}

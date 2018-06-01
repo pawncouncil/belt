@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belt</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'beltApp/css/index.css' %}">
+    <script src=""></script>
+</head>
+<body>
+    <div id="wrapper"> 
+        <div class="header">
+            <h1>{{destination.destination}}</h1>
+            <a href="/main">Home</a><a href="/logout">Logout</a>
+        </div>
+        <div class="destination">
+            <p>Planned By: {{ destination.creater.full_name }}</p>
+            <p>Description: {{ destination.description }}</p>
+            <p>Depart: {{ destination.trip_start }}</p>
+            <p>Return: {{ destination.trip_end }}</p>
+            
+            <h4>Other user's joining the trip:</h4>
+            {% for attendee in attendees %}
+            <p>{{ attendee.full_name }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

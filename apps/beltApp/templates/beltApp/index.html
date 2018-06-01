@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belt Test</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'beltApp/css/index.css' %}">
+    <script src=""></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="main">
+            <div class="header">
+                <h1>Registration</h1>
+            </div>
+            <div class="registration">
+                <form action='register' method='POST'>
+                    {% csrf_token %}
+                    <div>
+                        <h6>Full Name</h6>
+                        <input type='text' name='full_name'>
+                    </div>  
+                    <div>
+                        <h6>User Name</h6>
+                        <input type='text' name='username'>
+                    </div>
+                    <div>
+                        <h6>Password</h6>
+                        <input type='password' name='password'>
+                    </div>
+                    <div>
+                        <h6>Confirm Password</h6>
+                        <input type='password' name='passwordconf'>
+                    </div>
+                    <div>
+                        <button type='submit' class='reg'>Register</button>
+                    </div>
+                </form>         
+            </div>
+            <div class="image"><img src="/static/beltApp/images/background.png">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                        <li>
+                            <div class="alert alert-{{msg.level_tag}}" role="alert">
+                            {{msg.message}}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="bottomheader">
+                <h1>Login</h1>
+            </div>
+            <div class="login">
+                <form class='' action='login' method='POST'>
+                    {% csrf_token %}
+                    <div>
+                        <h6>Username</h6>
+                        <input type='text' name='username'>
+                    </div>
+                    <div>
+                        <h6>Password</h6>
+                        <input type='password' name='password'>
+                    </div>
+                    <div>
+                        <button type='submit' class='reg'>Enter</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

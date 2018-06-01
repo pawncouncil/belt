@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper{
+    height: 700px;
+    width: 970px;
+    /* background-color: blue; */
+    margin: auto;
+}
+
+.header{
+    height: 150px;
+    width: 970px;
+    display: inline-block;
+    vertical-align: top;
+    /* background-color: bisque; */
+}
+
+.header h1{
+    vertical-align: top;
+    display: inline-block;
+}
+
+.header a{
+    margin-left: 898px;
+    margin-top: -40px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+ul{
+
+    list-style: none;
+}
+
+h6{
+    margin-bottom: 0px;
+    margin-top: 8px;
+}
+
+.schedule{
+    height: 180px;
+    overflow: scroll;
+    
+}
+
+.others{
+    height: 280px;
+    overflow: scroll;
+    
+}
